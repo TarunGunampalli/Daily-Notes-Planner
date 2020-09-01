@@ -5,3 +5,6 @@ Chrome extension built for easy, simple tasks listing. Every morning, add any ta
 If you don't complete every single task that day, you have to keep them all and add more for the next day, forcing you to build up more until you can finally clear them out. This can help motivate you to aim high each morning and stay productive throughout the day.
 
 Color scheme built to match chrome dark theme.
+
+Future Improvements:
+Integrate REACT for better styling and UI
