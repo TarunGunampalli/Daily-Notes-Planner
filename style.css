@@ -9,10 +9,13 @@
     position: relative;
     top: 0;
     left:50%;
-    margin-left: -50px;
+    margin-left: -120px;
 }
 
 body {
     width: 242px;
-    height: 800px;/*120*/
+    /*height: 120px;*/
+    background-color: #292A2D;
+    color: white;
+    font-family: Calibri;
 }
