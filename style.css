@@ -19,3 +19,7 @@ body {
     color: white;
     font-family: Calibri;
 }
+
+#buttons {
+    height: 45px;
+}
