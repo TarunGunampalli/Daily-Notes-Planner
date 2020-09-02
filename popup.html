@@ -3,15 +3,17 @@
   <head>
     <title>Simple Notes</title>
     <link rel='stylesheet' href='style.css'>
-    <script src="popup.js"></script>
   </head>
   <body>
     <div class='top'>
         <h1 style='width:242px; text-align: center; color: white;'>New Tasks</h1>
     </div>
-    <input style='width: 184px;' type='text' id="noteField"></input>
-    <button id="saveButton">Save</button>
+    <input style='width: 182px;' type='text' id="noteField"></input>
+    <div id="saveButton"></div>
     <div id='listEnd'></div>
     <button style='width:100px; margin-bottom: 5px;' id='seeAllButton' class='center'>See All Notes</button>
   </body>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="script.js"></script>
 </html>

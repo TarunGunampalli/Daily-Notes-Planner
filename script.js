@@ -1,13 +1,31 @@
-if (window.location.pathname == '/popup.html') {
-    document.addEventListener('DOMContentLoaded', onStart, false);
-}
-else if (window.location.pathname == '/notes.html') {
-    document.addEventListener('DOMContentLoaded', initNotesPage, false);
-}
+document.addEventListener('DOMContentLoaded', onStart, false);
 
 var notes = ['filler'];
 
+'use strict';
 
+const e = React.createElement;
+
+class saveButton extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        
+
+        return e(
+        'button',
+        { onClick: saveNote() },
+        'Save'
+        );
+    }
+}
+
+const domContainer = document.querySelector('#saveButton');
+ReactDOM.render(e(saveButton), domContainer);
+
+//popup page functions
 function onStart() {
     if (localStorage.getItem('notesArray') !== null) {
         notes = JSON.parse(localStorage.getItem('notesArray'));
@@ -27,28 +45,11 @@ function saveNote() {
         notes.push(input);
     }
     localStorage.setItem('notesArray', JSON.stringify(notes));
-    //printAbove(input, 'listEnd');
+    //printList();
 }
 
 function openNotesPage() {
     window.open('notes.html', '_self', false);
-}
-
-function initNotesPage() {
-    var clearButton = document.getElementById('clearButton');
-    clearButton.addEventListener('click', clearNotes, false);
-    if  (localStorage.getItem('notesArray') !== null) {
-        notes = JSON.parse(localStorage.getItem('notesArray'));
-        for (var i = 0; i < notes.length; i++) {
-            printList(notes[i]);
-        }
-    }
-}
-
-function clearNotes() {
-    notes = [];
-    localStorage.clear();
-    location.reload();
 }
 
 function printAbove(text, element) {
@@ -59,10 +60,12 @@ function printAbove(text, element) {
     document.body.insertBefore(d, beforeElement);
 }
 
-function printList(text) {
-    const notes = document.getElementById('notes');
-    const listElement = document.createElement('li');
-    textNode = document.createTextNode(text);
-    listElement.textContent = text;
-    notes.appendChild(listElement);
+function printList() {
+    if  (localStorage.getItem('notesArray') !== null) {
+        notes = JSON.parse(localStorage.getItem('notesArray'));
+        printAbove(typeof notes, 'listEnd');
+        for (var i = 0; i < notes.length; i++) {
+            printAbove(notes[i], 'listEnd');
+        }
+    }
 }

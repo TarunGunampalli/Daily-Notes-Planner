@@ -20,6 +20,12 @@ body {
     font-family: Calibri;
 }
 
-#buttons {
-    height: 45px;
+li {
+    color:white;
+}
+
+#saveButton {
+    position: absolute;
+    right: 5px;
+    top: 61px;
 }
